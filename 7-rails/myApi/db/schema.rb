@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20211204103901) do
+ActiveRecord::Schema.define(version: 20211205055253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "robots", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
+    t.string "profession"
     t.boolean "fly"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.index ["name"], name: "index_robots_on_name", unique: true
   end
 
 end
